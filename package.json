@@ -1,0 +1,25 @@
+{
+  "name": "vitevue",
+  "private": false,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.4",
+    "@vue/devtools-api": "^6.1.4",
+    "element-plus": "^2.2.2",
+    "js-base64": "^3.7.2",
+    "qrcode.vue": "^3.3.3",
+    "vue": "^3.2.25",
+    "vue-router": "4",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "sass": "^1.52.2",
+    "vite": "^2.9.9"
+  }
+}
