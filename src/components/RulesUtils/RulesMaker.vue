@@ -52,8 +52,8 @@ function dragsatrt(e) {
         <draggable v-model="rules" item-key="order" @end="dragsatrt" animation="300" tag="div"
             :component-data="{ class: 'outarea' }" force-fallback="true">
             <template #item="{ element, index }">
-                <div class="oone">
-                    <div class="one" :class="selcindex == index ? 'selc' : ''" @click="selcindex = index">
+                <div class="oone" :class="selcindex == index ? 'selc' : ''">
+                    <div class="one" @click="selcindex = index">
                         <!-- {{ element.type }} -->
                         {{ ruleInfo[element.type](element)[0] }}
                     </div>
@@ -64,16 +64,17 @@ function dragsatrt(e) {
 </template>
 
 <style scoped lang="scss">
-
-
 .fd {
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     // background-color: red;
-    background: #ccc;
+    border-radius: 3px;
+    // background: #ddd;
     display: flex;
+    width: 100px;
 
     .btns {
         width: 100px;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -83,37 +84,47 @@ function dragsatrt(e) {
     .outarea {
         display: flex;
         /* border: 1px solid #000; */
-        background: #ccc;
+        // background: #ccc;
         /* padding: 2px; */
-        width: 400px;
+        // width: 100%;
         overflow: auto;
         flex: 1;
+        padding: 1px;
+
+        min-width: 100px;
+
 
         .oone {
+            border-radius: 2px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: #ccc;
             cursor: pointer;
+            padding: 1px;
+            margin-left: 1px;
 
             /* border-radius: 12%; */
             .one {
-                padding: 10px;
+                border-radius: 1px;
                 background: #fff;
                 user-select: none;
-                margin: 2px;
+                // margin: 1px;
                 /* border-radius: 10%; */
+                // height: 14px;
                 min-width: 30px;
                 text-align: center;
                 white-space: nowrap;
             }
 
-            .selc {
-                background: rgb(162, 198, 255);
-                cursor: move;
-            }
 
+
+        }
+
+        .selc {
+            background: #1d54ac;
+            cursor: move;
         }
 
     }

@@ -8,7 +8,7 @@ const qr = computed(() => {
 </script>
 
 <template>
-  <el-affix class="a" :offset="20"> 
+  <el-affix class="a" :offset="20">
     <el-row>
       <qrcode-vue :value="qr" :size="180" level="L" />
     </el-row>
@@ -16,13 +16,11 @@ const qr = computed(() => {
       扫描并开始使用这个Hub
     </el-row>
   </el-affix>
-
-
 </template>
 
 <style scoped>
-.a{
+.a {
   /* border: 1px solid #000; */
-  margin-right:20px;
+  margin-right: 20px;
 }
 </style>

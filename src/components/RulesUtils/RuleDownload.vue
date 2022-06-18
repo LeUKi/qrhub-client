@@ -1,6 +1,6 @@
 <script setup>
 import { ref, toRefs, computed, reactive } from 'vue'
-import type2init from "../utils/type2init";
+import type2init from "../../utils/type2init";
 
 const props = defineProps(["genData"])
 const emits = defineEmits([])
@@ -86,7 +86,7 @@ function dlxls() {
 
 <template>
     <!-- {{ JSON.stringify(data) }} -->
-    <el-drawer v-model="drShow" title="预览与下载" direction="rtl" size="70%">
+    <el-drawer v-model="drShow" title="查看与下载" direction="rtl" size="70%">
         <el-auto-resizer>
             <template #default="{ height, width }">
                 <el-table-v2 :columns="columns" :data="data" :width="width" :height="height" :footer-height="50" fixed>
@@ -97,6 +97,7 @@ function dlxls() {
             align-items: center;
           height: 100%;
         ">
+        <div style="margin-right: 16px">下载</div>
                             <el-button type="success" @click="dlcsv">
                                 csv
                             </el-button>
@@ -112,8 +113,8 @@ function dlxls() {
             </template>
         </el-auto-resizer>
     </el-drawer>
-    <el-button type="primary" style="margin-left: 16px" @click="drShow = true">
-        预览与下载
+    <el-button type="primary" style="margin-right: 16px" @click="drShow = true">
+        查看/下载所有编码
     </el-button>
 </template>
 

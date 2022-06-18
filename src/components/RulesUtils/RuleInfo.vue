@@ -6,7 +6,7 @@ import {
     rulesInfo,
     codeCheck,
     rulesParse
-} from "../utils/codeGen";
+} from "../../utils/codeGen";
 const props = defineProps(["rules", "selcindex"])
 const emits = defineEmits(['update:rules', "update:selcindex"])
 
@@ -61,7 +61,7 @@ const rule = computed({
                 <el-input-number v-model="rule.step" />
             </el-form-item>
             <el-form-item label="高位填充">
-                <el-input v-model.trim="rule.strinfill" class="ei" />
+                <el-input v-model.trim="rule.strinfill" class="ei" align="center"/>
             </el-form-item>
             <el-form-item label="总长度">
                 <el-input-number v-model="rule.stringlen" />
