@@ -7,7 +7,7 @@ import RuleInfo from '../RulesUtils/RuleInfo.vue'
 import RuleDel from '../RulesUtils/RuleDel.vue'
 import RuleDownload from '../RulesUtils/RuleDownload.vue'
 import { ElLoading } from 'element-plus'
-import { _postConfigNew } from '../../utils/apis'
+import { _postConfigNew, _postCodeGen } from '../../utils/apis'
 import {
     codeGen,
     rulesInfo,
@@ -80,10 +80,13 @@ function onSubmit() {
         text: '正在创建',
         background: 'rgba(0, 0, 0, 0.7)',
     })
-    _postConfigNew(props.host, d).then(res => {
-        loading.close()
-        console.log(res.data.insertedId);
-        window.location.href = '/#/' + props.host + '/' + res.data.insertedId
+    _postConfigNew(props.host, d).then(res1 => {
+        console.log(res1.data.insertedId);
+        _postCodeGen(props.host, { configid: res1.data.insertedId }).then(res2 => {
+            console.log(res2.data);
+            loading.close()
+            window.location.href = '/#/' + props.host + '/' + res1.data.insertedId
+        })
     })
 }
 

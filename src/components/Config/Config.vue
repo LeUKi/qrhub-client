@@ -35,7 +35,7 @@ const config = ref({rules:[]})
 <template>
     <el-container>
         <el-aside width="200px">
-            <ConfigAside :host="props.host" />
+            <ConfigAside :host="props.host" :configid="props.uconfigid"/>
         </el-aside>
         <el-main style="padding:0;">
             <ConfigMain @updateData="updateData" :configid="props.uconfigid" :config="config" :host="props.uhost"  />

@@ -45,6 +45,9 @@ export const _postConfigDel = (host, params) => {
 export const _postConfigNew = (host, params) => {
     return postRequest('/configNew', params, host)
 }
+export const _postCodeGen = (host, params) => {
+    return postRequest('/codeGen', params, host)
+}
 const getRequest = (url, params, host) => {
     return axios({
         method: 'get',

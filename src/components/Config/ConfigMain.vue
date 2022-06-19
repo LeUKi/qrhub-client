@@ -149,7 +149,7 @@ const colors = [
                                 已完成 {{ props.config.finish }}
                             </div>
                             <div>
-                                待扫码 {{ props.config.total - props.config.finish }}9678876
+                                待扫码 {{ props.config.total - props.config.finish }}
                             </div>
 
                         </div>
