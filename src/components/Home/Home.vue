@@ -25,10 +25,8 @@ const input = ref('')
 </script>
 
 <template>
-
     <div class="a">
         <el-input class="b" v-model="input" placeholder="输入QrHub后台地址">
-
         </el-input>
         <el-button type="primary" @click="setHost">
             <el-icon>

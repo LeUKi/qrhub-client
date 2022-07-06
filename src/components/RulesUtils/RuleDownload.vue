@@ -50,7 +50,7 @@ function dlcsv() {
     let row = `No,code\n`;
     for (let i = 0; i < data.length; i++) {
         for (const key in data[i]) {
-            row += `${data[i][key] + '\t'},`;
+            row += `${data[i][key]},`;
         }
         row += '\n';
     }
@@ -71,7 +71,7 @@ function dlxls() {
     let row = `No,code\n`;
     for (let i = 0; i < data.length; i++) {
         for (const key in data[i]) {
-            row += `${data[i][key] + '\t'},`;
+            row += `${data[i][key]},`;
         }
         row += '\n';
     }

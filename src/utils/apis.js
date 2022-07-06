@@ -4,7 +4,7 @@ import {
 } from 'element-plus'
 
 let head = 'http://'
-axios.defaults.timeout = 15000;
+axios.defaults.timeout = 30000;
 axios.interceptors.response.use(
     function (response) {
         ElMessage({
@@ -34,6 +34,9 @@ export const _getConfigs = (host) => {
 }
 export const _getConfig = (host, params) => {
     return getRequest('/configGet', params, host);
+}
+export const _getCodesAll = (host, params) => {
+    return getRequest('/codesAllGet', params, host);
 }
 export const _postConfigUpdate = (host, params) => {
     return postRequest('/configUpdate', params, host)
